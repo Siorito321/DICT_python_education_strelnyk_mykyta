@@ -26,5 +26,20 @@ while (NUMBER + 1) > x:
     print(f"{x}!")
     x += 1
 
-print('Completed! Have a nice day!')
+print('Now let`s test your programming knowledge')
+print('''Why do we use methods?
+1. To repeat a statement multiple times. 
+2. To decompose a program into several small subroutines. 
+3. To determine the execution time of a program. 
+4. To interrupt the execution of a program.''')
+
+ANSWER = 0
+
+while ANSWER != 2:
+    ANSWER = int(input())
+    if ANSWER != 2:
+        print('Please, try again')
+
+print('Congratulations! Have a nice day!')
+
 
