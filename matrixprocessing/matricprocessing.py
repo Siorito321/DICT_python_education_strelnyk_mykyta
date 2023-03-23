@@ -136,6 +136,7 @@ class Matrix:
         """creates inverted matrix"""
         self.matrix = self.matrix_formatizer()
         det = int(self.determinant(self.matrix))
+<<<<<<< HEAD
         if det == 0:
             return 'this matrix can`t be inverted'
         else:
@@ -154,6 +155,26 @@ class Matrix:
                 for b in range(n):
                     result[i][b] += (soyuz[i][b] / det)
             return result
+=======
+        # if det == 0:
+        #     return 'this matrix can`t be inverted'
+        # else:
+        n = len(self.matrix)
+        result = [[0] * n for _ in range(n)]
+        soyuz = [[0] * n for _ in range(n)]
+        for j in range(n):
+            for k in range(n):
+                sign = (-1) ** (j + k)
+                minor = self.matrix_minor(self.matrix, j, k)
+                soyuz[j][k] += sign * minor
+        soyuz = Matrix(n, n, soyuz)
+        soyuz.matrix = soyuz.matrix_starter_list
+        soyuz = soyuz.transpose_main()
+        for i in range(n):
+            for b in range(n):
+                result[i][b] += (soyuz[i][b] / det)
+        return result
+>>>>>>> 22158ca7d9aedc250a1acd93ddaaa21440550231
 
 def correct_input(a, b, c) -> bool:
     """checking if matrix input is correct"""
